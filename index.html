@@ -5,56 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Flipper</title>
     <style>
-        #green{
-            background:green;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: white;
+            transition: background-color 0.5s;
         }
-        #red{
-            background:red;
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        #blue{
-            background-color: blue;
-        }
-        #purple{
-            background-color: purple;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
         button {
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    margin: 5px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Random button with rainbow gradient */
-#random {
-    background: linear-gradient(90deg, 
-        #ff0000, #ff7f00, #ffff00, 
-        #00ff00
-    );
-    background-size: 300%;
-    color: white;
-    transition: background-position 0.5s ease-in-out, box-shadow 0.3s;
-}
-
-/* Add a smooth gradient animation on hover */
-#random:hover {
-    background-position: right;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
-}
-
-
+            border-radius: 8px;
+            width: 120px;
+            height: 45px;
+            margin: 10px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+        }
+        #green { background: #28a745; }
+        #red { background: #dc3545; }
+        #blue { background: #007bff; }
+        #purple { background: #6f42c1; }
+        #random {
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+            background-size: 300%;
+            color: white;
+            transition: background-position 0.5s ease-in-out, box-shadow 0.3s;
+        }
+        #random:hover {
+            background-position: right;
+            box-shadow: 0 0 12px rgba(255, 0, 255, 0.9);
+        }
     </style>
 </head>
 <body>
-    <h3>Color Flipper</h3>
-    <button id="green" onclick="setColor('green')">Green</button>
-    <button id="red" onclick="setColor('red')">Red</button>
-    <button id="blue" onclick="setColor('blue')">Blue</button>
-    <button id="purple" onclick="setColor('purple')">Purple</button>
-    <button id="random" onclick="randomColor()">Random</button>
+    <div class="container">
+        <h1>Color Flipper</h1>
+        <button id="green" onclick="setColor('green')">Green</button>
+        <button id="red" onclick="setColor('red')">Red</button>
+        <button id="blue" onclick="setColor('blue')">Blue</button>
+        <button id="purple" onclick="setColor('purple')">Purple</button>
+        <button id="random" onclick="randomColor()">Random</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
