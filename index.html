@@ -14,12 +14,38 @@
         #blue{
             background-color: blue;
         }
-        button{
-            border-radius:5px;
-            width: 100px;
-            height: 40px;
-            margin:5px;
+        #purple{
+            background-color: purple;
         }
+        button {
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Random button with rainbow gradient */
+#random {
+    background: linear-gradient(90deg, 
+        #ff0000, #ff7f00, #ffff00, 
+        #00ff00, #0000ff, #4b0082, #8b00ff
+    );
+    background-size: 300%;
+    color: white;
+    transition: background-position 0.5s ease-in-out, box-shadow 0.3s;
+}
+
+/* Add a smooth gradient animation on hover */
+#random:hover {
+    background-position: right;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+
     </style>
 </head>
 <body>
@@ -27,7 +53,8 @@
     <button id="green" onclick="setColor('green')">Green</button>
     <button id="red" onclick="setColor('red')">Red</button>
     <button id="blue" onclick="setColor('blue')">Blue</button>
-    <button onclick="randomColor()">Random</button>
+    <button id="purple" onclick="setColor('purple')">Purple</button>
+    <button id="random" onclick="randomColor()">Random</button>
     <script src="script.js"></script>
 </body>
 </html>
